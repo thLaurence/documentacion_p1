@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>DocApiRest</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+
+
+            <div class="sidebar-header text-center">
+                <img src="assets/img/Logo PNG.png" alt="">
+
+                <div class="line"></div>
+                <h3>ALPHA DOCERE</h3>
+                <!-- <a href="#arriba" type="button" class="btn btn-outline-light font-weight-bold">
+                    ↑<p class="font-weight-bold">Inicio Página</p>
+                </a> -->
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Introducción</a>
+
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#par0">Preámbulo</a>
+                        </li>
+                        <li>
+                            <a href="#par">Arquitectura Api Rest</a>
+                        </li>
+                        <li>
+                            <a href="#par1">Propiedades del Header HTTP</a>
+                        </li>
+                        <li>
+                            <a href="#par2">Glosario General</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li class="active">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Transacciones</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#par7">Flujo de una Transacción</a>
+                        </li>
+                        <li>
+                            <a href="#par8">GET/listar todos los miembros</a>
+                        </li>
+                        <li>
+                            <a href="#par9">GET/listar 1 miembro</a>
+                        </li>
+                        <li>
+                            <a href="#par10">POST/crear miembro</a>
+                        </li>
+                        <li>
+                            <a href="#par11">PUT/actualizar miembro</a>
+                        </li>
+                        <li>
+                            <a href="#par12">DEL/eliminar miembro</a>
+                        </li>
+                        <li>
+                            <a href="#par13">POST/obtener token</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Códigos de Respuesta</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                        <li>
+                            <a href="#par20">status_200</a>
+                        </li>
+                        <li>
+                            <a href="#par21">status_400</a>
+                        </li>
+                        <li>
+                            <a href="#par22">status_401</a>
+                        </li>
+                        <li>
+                            <a href="#par23">status_405</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+
+
+
+                <li>
+                    <a href="#par14">Conclusión</a>
+                </li>
+
+            </ul>
+            <div class="sidebar-header text-center">
+
+                <a href="#arriba" type="button" class="btn btn-outline-light font-weight-bold">
+                    ↑<p class="font-weight-bold colortexbot">Inicio Página</p>
+                </a>
+            </div>
+
+
+
+
+
+        </nav>
+
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav id="arriba" class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-fixed-top">
+
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button> -->
+                    <div class="container">
+                        <h3 class="text-center">Documentación Api Rest</h3>
+                    </div>
+
+                    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+
+                        </ul>
+                    </div> -->
+                </div>
+            </nav>
+
+            <h1>Introducción</h1>
+            <p></p>
+            <div class="line"></div>
+
+            <h2 id="par0">Preámbulo</h2>
+            <p class="text-justify colortexbot" >Este documento fue creado en base al funcionamiento y estructura de la API REST, esto para generar una mejor comprensión del equipo desarrollador y que a futuro se pueda agregar o realizar cambios al código. Aquí quedaran representado los métodos request GET, POST, PUT y DELETE. Además, los códigos de estado HTTP.
+                </p>
+                <p class="text-justify colortexbot" >El Funcionamiento principal de nuestra API REST será la comunicación a través de solicitudes HTTP para realizar distintas funciones estándar en la base de datos de Alpha Docere, estas funciones van desde crear, leer, actualizar y eliminar registros (Conocido como CRUD) de la tabla llamada “miembros”. Es decir utilizará una solicitud GET para recuperar el registro de uno o varios miembros, una solicitud POST para crear un nuevo miembro, una solicitud PUT para actualizarlos y una solicitud DELETE para suprimir o eliminar un miembro de la base de datos. Cada uno de estos métodos HTTP pueden ser utilizados en llamadas a la API.
+                </p>
+            <p class="text-justify colortexbot">La API fue desarrollada en código PHP y con conexión a base de datos MYSQL. También quedaran detalladas las rutas de cada método, los parámetros y json de las peticiones con sus respectivos mensajes de respuestas.</p>
+            <div class="line"></div>
+
+            <h2 id="par">Arquitectura Api Rest</h2>
+            <div class="container "><img src="assets/img/Arquitectura.png" width="100%" height="100%"alt=""></div>
+            <div class="line"></div>
+
+
+            <h2 id="par1">Propiedades del Header HTTP</h2>
+            <table>
+                <thead>
+                <tr>
+                <th><strong>Nombre</strong></th>
+                <th><strong>Descripción</strong></th>
+                <th><strong>Valor</strong></th>
+                <th><strong>¿Mandatorio?</strong></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>tokem</td>
+                <td>Se genera un <strong>token</strong> para que los usuarios puedan crear, borrar y editar un miembro  en la base de datos.</td>
+                <td>Proporcionado API REST DOCERE</td>
+                <td>Sí</td>
+                </tr>
+                <tr>
+                <td>Tipo contenido</td>
+                <td>El tipo MIME del contenido del cuerpo enviado. Por defecto JSON es Unicode UTF-8. No se debe configurar otro charset</td>
+                <td><code>application/json</code></td>
+                <td>Sí</td>
+                </tr>
+                
+                </tbody>
+                </table>
+            <div class="line"></div>
+
+
+
+
+            <h2 id="par2">Glosario General</h2>
+            <p class="text-justify colortexbot">Para una mejor comprensión del lector, es necesario definir algunos conceptos e identificadores que serán referidos en la documentación.</p>
+            <p class="text-justify colortexbot"><strong>Token de acceso:</strong> un identificador único de un usuario que solicita acceso a la API. Un usuario puede generar un token de acceso en el panel de control. Cuando se realiza una solicitud, podemos asociar el token proporcionado con el que tenemos almacenado, para autenticar e identificar al usuario solicitante y otorgar los permisos de edición.</p>
+            <p class="text-justify colortexbot"><strong>API:</strong> un puente entre dos sistemas que normalmente no trabajarían juntos. Por ejemplo, sistemas que no tienen un lenguaje común con cual que comunicarse.</p>
+            <p class="text-justify colortexbot"><strong>Encabezado HTTP:</strong> los encabezados HTTP son los pares nombre-valor que aparecen en los mensajes de solicitud y respuesta de los encabezados de mensajes del protocolo de transferencia de hipertexto (http).</p>
+            <p class="text-justify colortexbot"><strong>JSON:</strong> un formato de intercambio de datos de lenguaje natural y ligero. Es el formato que se utiliza para enviar y recuperar la mayoría de los datos a través de la API.</p>
+            
+            <div class="line"></div>
+
+           
+            <h1>Transacciones</h1>
+            <div class="line"></div>
+
+            <h2 id="par7">Flujo de una Transacción</h2>
+            <div class="DocTextSection-content u-markdownBasic "><p class="colortexbot">El flujo de una <strong>Transacción </strong> a través de la API RESTful se compone de los siguientes <em>Requests</em>:</p>
+                <ol>
+                <li>
+                <p class="colortexbot">Se realiza un GET para listar todos los miembros a <code>http://localhost/ApiDocere/miembros.</code>  Parámetros solicitados <strong>page</strong> y <strong>value.</strong></p>
+                </li>
+                <li>
+                <p class="colortexbot">Se realiza un GET para listar un miembro a <code>http://localhost/ApiDocere/miembros.</code>  Parámetros solicitados <strong>id</strong> y <strong>value.</strong></p>
+                </li>
+                <li>
+                    <p class="colortexbot">Se realiza un POST para crear un miembro a <code>http://localhost/ApiDocere/miembros</code> Se envia por body un JSON con todos los atributos del miembro incluyendo el token para si creación</p>
+                </li>
+                <li>
+                    <p class="colortexbot">Se realiza un POST para crear un miembro a <code>http://localhost/ApiDocere/miembros</code> Se envia por body un JSON con todos los atributos del miembro incluyendo el token para si creación</p>
+                </li>
+                </ol>
+                
+            <div class="line"></div>
+
+
+
+            <h2 id="par8">GET/listar todos los miembros</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+            <h2 id="par9">GET/listar 1 miembro</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+            <h2 id="par10">POST/crear miembro</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+            <h2 id="par11">PUT/actualizar miembro</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+            <h2 id="par12">DEL/eliminar miembro</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+            <h2 id="par13">POST/obtener token</h2>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+            <div class="jumbotron">
+                <h1>Códigos de Respuesta y Mensajes de Error</h1>
+                <hr class="my-4">
+                <h3 id="par20">status_200</h3>
+                <p class="text-justify colortexbot">“OK”. Se refiere a que la solicitud ha sido aceptada. Es decir, la solicitud fue aceptada y se ha obtenido un resultado.
+                    Este es un código de respuesta general a cualquier solicitud que se genere. En el caso de una
+                    solicitud GET el registro solicitado ya se encuentra en el cuerpo de la respuesta. En una
+                    solicitud PUT o DELETE la solicitud fue aceptada y el reemplazo o la eliminación del registro ya se encuentra en el cuerpo de la respuesta.</p>
+                    <div class="container "><img src="assets/img/STATUS 200.png" width="100%" height="100%"alt=""></div>
+                    <hr class="my-4">
+                <h3 id="par21">status_400</h3>
+                <p class="text-justify colortexbot">“BAD REQUEST”. Datos en un formato incorrecto o incompletos. La solicitud no ha sido válida, esto sucede cuando el
+                    servidor ha intentado procesar la solicitud pero existe algún dato o no existe un dato por lo tanto no es válido y se
+                    rechaza la solicitud.</p>
+                    <div class="container "><img src="assets/img/STATUS 400.png" width="100%" height="100%"alt=""></div>
+                <hr class="my-4">
+                <h3 id="par22" >status_401</h3>
+                <p class="text-justify colortexbot">“UNAUTHORIZED”. No se encuentra autorizado, este código de respuesta es enviado cuando se encuentra habilitada la seguridad
+                    en el servidor y falta la información de autorización en la solicitud.</p>
+                    <div class="container "><img src="assets/img/STATUS 401.png" width="100%" height="100%"alt=""></div>
+                    <hr class="my-4">
+                <h3 id="par23">status_405</h3>
+                <p class="text-justify colortexbot">“METHOD NOT ALLOWED”. Método no permitido, esto ocurre cuando el recurso de destino no admite el método HTTP solicitado, un
+                    ejemplo es cuando solamente permite operaciones de GET.</p>
+                    <div class="container "><img src="assets/img/STATUS 405.png" width="100%" height="100%"alt=""></div>
+              </div>
+
+            <h2 id="par14">Conclusión</h2>
+            <p class="text-justify">Con el objetivo de obtener un código fluido y acertado para los distintos requerimientos solicitados, nuestra API REST cumple con los estándares propuestos al inicio del trabajo, estableciendo una comunicación con el cliente y exponiendo los datos de la clase miembros, logrando así el funcionamiento correcto del CRUD.  Permitiendo el fácil manejo para un buen mantenimiento a futuro, pues al seguir la estructura creada como base en la clase miembros nos permite entender de mejor manera el código.  Además, facilita el desarrollo de la Api para la creación de las  clases que serian necesarias incluir.
+                Nuestros estándares mínimos fueron establecidos gracias a la creación de una API Prototipo al comienzo del proyecto con la cual se realizaron las distintas pruebas, evitando así distintos errores comunes en un futuro.</p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="line"></div>
+
+        </div>
+        
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
